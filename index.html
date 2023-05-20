@@ -19,21 +19,60 @@
     <div class="container">
         <div class="category" id="category1">
             <p>Icecream</p>
-            <p><input type="submit" value="Vanilla" id="vanilla"></p>
-            <p><input type="submit" value="Chocolate" id="chocolate"></p>
-            <p><input type="submit" value="Strawberry" id="strawberry"></p>
+            <p><input class="icecream-btn" type="submit" value="Vanilla" id="vanilla"></p>
+            <p><input class="icecream-btn" type="submit" value="Chocolate" id="chocolate"></p>
+            <p><input class="icecream-btn" type="submit" value="Strawberry" id="strawberry"></p>
         </div>
 
+        <div class="category" id="category2">
+            <p>Sweetener</p>
+            <p><input class="sweetener-btn" type="submit" value="Pure" id="pure"></p>
+            <p><input class="sweetener-btn" type="submit" value="Sugar" id="sugar"></p>
+            <p><input class="sweetener-btn" type="submit" value="Syrup" id="syrup"></p>
+        </div>
+
+        <div class="category" id="category3">
+            <p>Flavor</p>
+            <p><input class="flavor-btn" type="submit" value="Coffee" id="coffee"></p>
+            <p><input class="flavor-btn" type="submit" value="Fruit" id="fruit"></p>
+            <p><input class="flavor-btn" type="submit" value="Tea" id="tea"></p>
+        </div>
 
     </div>
 
+    <div class="content">
+        <iframe src="text.txt" class="info" width="80%" height="400px">
+        </iframe>
+    </div>
 
 
 </div>
 
     <script>
 
+        $(".icecream-btn").click(
+            function (event) {
+                var clickedElement = event.currentTarget;
+                var clickedElementId = clickedElement.id;
+                $(".info").attr("src", `category_01/${clickedElementId}/${clickedElementId}.txt`);
+            }
+        );
 
+        $(".sweetener-btn").click(
+            function (event) {
+                var clickedElement = event.currentTarget;
+                var clickedElementId = clickedElement.id;
+                $(".info").attr("src", `category_02/${clickedElementId}/${clickedElementId}.txt`);
+            }
+        );
+
+        $(".flavor-btn").click(
+            function (event) {
+                var clickedElement = event.currentTarget;
+                var clickedElementId = clickedElement.id;
+                $(".info").attr("src", `category_03/${clickedElementId}/${clickedElementId}.txt`);
+            }
+        );
         
     </script>
 </body>
